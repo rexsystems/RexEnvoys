@@ -1,0 +1,29 @@
+name: RexEnvoys
+version: '${project.version}'
+main: me.rexsystems.rexEnvoys.RexEnvoys
+api-version: '1.21'
+folia-supported: true
+authors: [RexSystems]
+description: Supply crate events for Paper servers
+website: https://rexsystems.me
+softdepend: [PlaceholderAPI, ItemsAdder, Oraxen]
+
+commands:
+  rexenvoys:
+    description: RexEnvoys command
+    aliases: [renvoy, envoy]
+    usage: /rexenvoys <help|list|reload|start|stop|flare>
+
+permissions:
+  rexenvoys.use:
+    description: Use RexEnvoys help and list
+    default: true
+  rexenvoys.start:
+    description: Start and stop an envoy event
+    default: op
+  rexenvoys.flare:
+    description: Give envoy flares
+    default: op
+  rexenvoys.reload:
+    description: Reload RexEnvoys
+    default: op

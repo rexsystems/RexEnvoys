@@ -1,0 +1,142 @@
+# Event definitions. Created once. Reload reads this file and does not overwrite it.
+# Several events may run at the same time.
+# trigger: schedule or manual
+# spawn.mode: random or fixed
+# Fixed points are used as written. Random points use settings.safe-spawn.
+# block.id is a namespaced custom block (namespace:id, itemsadder:namespace:id, or oraxen:id).
+# Loot commands run once, as console, when the loot is written into the chest.
+# {player} is the opener, or the player who used the flare when loot is written on land.
+
+events:
+  supply:
+    enabled: true
+    trigger: schedule
+    interval-seconds: 1800
+    spawn:
+      mode: random
+      amount: 3
+    region:
+      world: world
+      min:
+        x: -128
+        y: 60
+        z: -128
+      max:
+        x: 128
+        y: 100
+        z: 128
+    block:
+      material: CHEST
+      id: ""
+    flare:
+      material: BLAZE_ROD
+      name: "<gold>Supply flare"
+      lore:
+        - "<gray>Right-click to call a supply drop."
+      glow: true
+      consume: true
+    firework: true
+    timeout-seconds: 300
+    despawn-when-empty: true
+    sound:
+      enabled: true
+      sound: ENTITY_FIREWORK_ROCKET_LARGE_BLAST
+      volume: 1.0
+      pitch: 1.0
+    actionbar:
+      enabled: true
+      text: "<gold>Supply crates are on the ground"
+    bossbar:
+      enabled: true
+      text: "<gold>Supply drop"
+      color: YELLOW
+      style: SOLID
+      seconds: 8
+    messages:
+      start: "{prefix}<gold>A supply drop has started."
+      land: "{prefix}<yellow>A crate landed at <white>{x} {y} {z}<yellow>."
+      open: "{prefix}<gray>You opened a supply crate."
+      empty: "{prefix}<gray>A supply crate is empty."
+      timeout: "{prefix}<gray>A supply crate vanished."
+      flare: "{prefix}<gold>{player} called a supply drop."
+    loot:
+      - chance: 100
+        commands: []
+        items:
+          - material: DIAMOND
+            amount: 2
+            name: "<aqua>Supply diamond"
+            lore:
+              - "<gray>From a supply crate"
+      - chance: 35
+        commands: []
+        items:
+          - material: GOLDEN_APPLE
+            amount: 1
+            name: "<gold>Supply apple"
+            lore: []
+
+  airdrop:
+    enabled: true
+    trigger: manual
+    interval-seconds: 1800
+    spawn:
+      mode: fixed
+      amount: 1
+      points:
+        - world: world
+          x: 0
+          y: 80
+          z: 0
+    region:
+      world: world
+      min:
+        x: 0
+        y: 80
+        z: 0
+      max:
+        x: 0
+        y: 80
+        z: 0
+    block:
+      material: CHEST
+      id: ""
+    flare:
+      material: AMETHYST_SHARD
+      name: "<aqua>Airdrop flare"
+      lore:
+        - "<gray>Right-click to call the airdrop."
+      glow: true
+      consume: true
+    firework: true
+    timeout-seconds: 180
+    despawn-when-empty: true
+    sound:
+      enabled: true
+      sound: BLOCK_AMETHYST_BLOCK_CHIME
+      volume: 1.0
+      pitch: 1.0
+    actionbar:
+      enabled: true
+      text: "<aqua>Airdrop landed"
+    bossbar:
+      enabled: false
+      text: "<aqua>Airdrop"
+      color: BLUE
+      style: SOLID
+      seconds: 6
+    messages:
+      start: "{prefix}<aqua>An airdrop has started."
+      land: "{prefix}<aqua>A crate landed at <white>{x} {y} {z}<aqua>."
+      open: "{prefix}<gray>You opened an airdrop."
+      empty: "{prefix}<gray>The airdrop crate is empty."
+      timeout: "{prefix}<gray>The airdrop crate vanished."
+      flare: "{prefix}<aqua>{player} called an airdrop."
+    loot:
+      - chance: 100
+        commands: []
+        items:
+          - material: EMERALD
+            amount: 4
+            name: "<green>Airdrop emerald"
+            lore: []

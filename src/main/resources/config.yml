@@ -1,0 +1,44 @@
+# RexEnvoys configuration
+# Player-facing strings accept MiniMessage, legacy & codes, &#RRGGBB, and #RRGGBB.
+# This file is updated in place. envoys.yml is not.
+
+config-version: 1
+
+settings:
+  # land writes loot when the crate lands. open writes it on the first open.
+  # Either way the roll is kept and later opens do not roll again.
+  loot-when: open
+  # Random crates skip void, liquid, and ground that is not solid.
+  safe-spawn: true
+  # How many columns to try before that crate is skipped.
+  spawn-attempts: 12
+
+messages:
+  prefix: "<gray>[<#f75634>RexEnvoys<gray>] "
+  no-permission: "{prefix}<red>You do not have permission to do that."
+  reload: "{prefix}<green>Configuration reloaded."
+  help-header: "{prefix}<white>RexEnvoys"
+  help:
+    - "<gray>/rexenvoys help <dark_gray>- <white>Show this help"
+    - "<gray>/rexenvoys list <dark_gray>- <white>List events"
+    - "<gray>/rexenvoys start <id> <dark_gray>- <white>Start an event"
+    - "<gray>/rexenvoys stop <id> <dark_gray>- <white>Stop an event"
+    - "<gray>/rexenvoys flare give <player> <id> <dark_gray>- <white>Give a flare"
+    - "<gray>/rexenvoys reload <dark_gray>- <white>Reload config.yml and envoys.yml"
+  unknown-event: "{prefix}<red>Unknown event <white>{id}<red>."
+  disabled: "{prefix}<red><white>{id} <red>is disabled."
+  already-running: "{prefix}<yellow><white>{id} <yellow>is already running."
+  not-running: "{prefix}<yellow><white>{id} <yellow>is not running."
+  started: "{prefix}<green>Started <white>{id}<green>."
+  stopped: "{prefix}<green>Stopped <white>{id}<green>."
+  spawn-failed: "{prefix}<red>No crate could be placed for <white>{id}<red>."
+  called: "{prefix}<gold>You called <white>{id}<gold>."
+  flare-given: "{prefix}<green>Gave a <white>{id} <green>flare to <white>{player}<green>."
+  flare-received: "{prefix}<gold>You received a <white>{id} <gold>flare."
+  player-offline: "{prefix}<red>That player is not online."
+  usage-start: "{prefix}<gray>Usage: <white>/rexenvoys start <id>"
+  usage-stop: "{prefix}<gray>Usage: <white>/rexenvoys stop <id>"
+  usage-flare: "{prefix}<gray>Usage: <white>/rexenvoys flare give <player> <id>"
+  list-header: "{prefix}<white>Events"
+  list-line: "<gray>{id} <dark_gray>- <white>{state}"
+  list-empty: "{prefix}<gray>No events are configured."
