@@ -7,9 +7,12 @@ import me.rexsystems.rexEnvoys.envoy.EnvoyCatalog;
 import me.rexsystems.rexEnvoys.envoy.EnvoyService;
 import me.rexsystems.rexEnvoys.flare.FlareListener;
 import org.bukkit.command.PluginCommand;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class RexEnvoys extends JavaPlugin {
+
+    private static final int BSTATS_PLUGIN_ID = 35274;
 
     private PluginConfig pluginConfig;
     private EnvoyCatalog catalog;
@@ -39,6 +42,7 @@ public final class RexEnvoys extends JavaPlugin {
             getLogger().info("PlaceholderAPI expansion registered.");
         }
 
+        new Metrics(this, BSTATS_PLUGIN_ID);
         getLogger().info("RexEnvoys enabled.");
     }
 
