@@ -37,4 +37,4 @@ Aliases: `/renvoy`, `/envoy`
 | `rexenvoys.flare` | op | Give flares |
 | `rexenvoys.reload` | op | Reload the plugin |
 
-Documentation: https://rexsystems.me/docs/rexenvoys
+Documentation: https://docs.rexsystems.me/rexenvoys/

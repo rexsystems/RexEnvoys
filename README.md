@@ -50,7 +50,7 @@ Aliases: `/renvoy`, `/envoy`
 
 The pages in [docs/](docs/index.md) drop into a Starlight site at `src/content/docs/rexenvoys/`. Paste `docs/sidebar.mjs` into the site sidebar.
 
-Full docs: [https://rexsystems.me/docs/rexenvoys](https://rexsystems.me/docs/rexenvoys)
+Full docs: [https://docs.rexsystems.me/rexenvoys/](https://docs.rexsystems.me/rexenvoys/)
 
 ## License
 
